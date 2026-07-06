@@ -1,0 +1,49 @@
+name: smart_chat_bot
+description: "An AI-powered chatbot application built with Flutter."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+# Dependencies specify other packages that your package needs in order to work.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  http: ^1.6.0
+  get: ^4.7.3
+  get_storage: ^2.1.1
+  flutter_markdown: ^0.7.7+1
+  shared_preferences: ^2.5.5
+  uuid: ^4.5.3
+  share_plus: ^13.1.0
+  google_sign_in: ^6.2.1
+  just_audio: ^0.10.6
+  screenshot: ^3.0.0
+  path_provider: ^2.1.6
+  system_theme: ^3.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+  # Ensuring that the Material Icons font is included
+  uses-material-design: true
+
+  # بخش فونت‌ها برای اعمال فونت قرآنی عثمان طاها بازسازی شد
+  fonts:
+    - family: UthmanTaha
+      fonts:
+        - asset: assets/fonts/ScheherazadeRegOT.ttf
