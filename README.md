@@ -67,6 +67,7 @@ The developer remained responsible for defining the project goals, reviewing AI-
 
 This project demonstrates how modern AI-assisted software engineering can dramatically accelerate development while maintaining developer oversight and engineering responsibility.
 
+---
 
 ### 🎨 Premium Share Card Generator
 
