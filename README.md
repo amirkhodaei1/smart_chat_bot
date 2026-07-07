@@ -1,134 +1,169 @@
 # 🧠 Hakim — AI-Powered Quranic Intelligence Platform
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
-  <img src="https://img.shields.io/badge/GetX-State%20Management-8A2BE2?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"/>
-</p>
-
-<p align="center">
-<b>An AI-powered Quranic assistant designed to transform verses into deep understanding, practical guidance, and meaningful reflection.</b>
-</p>
+> **A full-stack AI-powered Quranic assistant built with Flutter and Python, designed to transform Quranic verses into structured knowledge, practical guidance, and meaningful reflection.**
 
 ---
 
-## 🌟 Overview
+# Overview
 
-Hakim is a modern Quranic AI assistant built with Flutter and Flask.
+Hakim is a full-stack mobile application that combines **Flutter** on the client side with a **Python (Flask)** backend.
 
-The platform combines artificial intelligence, semantic analysis, and structured reasoning to help users explore Quranic verses beyond simple translations. Each response is generated through a layered analysis pipeline that can provide spiritual insights, contextual explanations, and practical recommendations.
+Instead of acting as a generic chatbot, Hakim implements a structured AI processing pipeline that retrieves contextual information, builds optimized prompts, validates model responses, and returns a consistent JSON schema specifically designed for the mobile application.
 
-The application is designed with a clean mobile experience, fast API communication, persistent conversation history, and premium sharing capabilities.
-
----
-
-## ✨ Features
-
-### 📖 Intelligent Quran Analysis
-
-* Semantic verse interpretation
-* Context-aware explanations
-* Spiritual reflections
-* Practical life guidance
-* Structured AI responses
-* Multi-layer reasoning system
-
-### 🤖 AI Assistant Experience
-
-* Natural conversational interface
-* Persistent chat history
-* Session management
-* Fast response generation
-* Error-resilient communication layer
+The platform focuses on making Quranic interpretation more accessible through semantic analysis, contextual explanations, practical guidance, and beautifully generated shareable content.
 
 ---
 
-### 🤖 AI-Assisted Development
+# Architecture
 
-This project was developed using an **AI-first development workflow**.
-
-Approximately **90% of the implementation** was completed with the assistance of modern AI tools through an iterative collaboration between the developer and AI. The development process relied heavily on AI for accelerating implementation, generating and refining code, debugging, architecture discussions, documentation, and UI improvements.
-
-AI contributed to areas including:
-
-* Flutter application development
-* Backend development with Python & Flask
-* REST API implementation
-* Software architecture discussions
-* State management and code organization
-* Prompt engineering
-* UI/UX improvements
-* Debugging and optimization
-* Documentation and technical writing
-
-The developer remained responsible for defining the project goals, reviewing AI-generated code, integrating components, testing functionality, fixing issues, and making all final technical decisions.
-
-This project demonstrates how modern AI-assisted software engineering can dramatically accelerate development while maintaining developer oversight and engineering responsibility.
-
----
-
-### 🎨 Premium Share Card Generator
-
-Generate beautiful shareable content directly from AI responses.
-
-Features include:
-
-* Dynamic text scaling
-* Zero text truncation
-* High-resolution export
-* RTL support
-* Instagram Story support
-* Telegram-ready cards
-* Custom theme colors
-
-### 🎙 Voice Integration
-
-* Speech-to-text pipeline
-* Voice-driven interaction
-* Mobile-friendly workflow
-
-### 📱 Modern Flutter Interface
-
-* Flutter UI
-* GetX architecture
-* Responsive design
-* Smooth navigation
-* Clean state management
-
----
-
-## 🏗 Architecture
-
-```text
-Flutter Mobile App
-        │
-        ▼
-    REST API
-        │
-        ▼
- Flask Backend
-        │
-        ▼
- AI Processing Layer
-        │
-        ├── Prompt Engineering
-        ├── Context Management
-        ├── Knowledge Processing
-        └── Response Formatting
-        │
-        ▼
- Structured JSON Output
+```
+                 Flutter Mobile Client
+                          │
+                          ▼
+                     REST API Layer
+                          │
+                          ▼
+                    Python Flask Server
+                          │
+        ┌─────────────────┼──────────────────┐
+        │                 │                  │
+        ▼                 ▼                  ▼
+ Retrieval Engine   Session Manager     LLM Gateway
+ (TF-IDF Index)      (SQLite WAL)      (GapGPT API)
+        │                 │                  │
+        └─────────────────┼──────────────────┘
+                          ▼
+              Response Validation Layer
+                          │
+         • JSON Sanitization
+         • Schema Enforcement
+         • Audio Link Generator
+         • Share Card Formatter
+                          │
+                          ▼
+               Structured JSON Response
 ```
 
 ---
 
-## 📂 Project Structure
+# Core Components
 
-```text
-hakim/
-│
+## Lightweight Retrieval Engine
+
+Instead of relying on large vector databases, Hakim uses a lightweight retrieval engine based on:
+
+* TF-IDF scoring
+* Inverted Index
+* Phrase matching
+* Chunk-based document retrieval
+
+Knowledge is stored in `knowledge.txt` and indexed into semantic chunks.
+
+Document ranking follows the classic TF-IDF scoring model with additional phrase-matching prioritization for more relevant contextual retrieval.
+
+---
+
+## JSON Response Sanitizer
+
+Large Language Models occasionally generate malformed JSON or include Markdown formatting.
+
+Hakim automatically:
+
+* Removes Markdown wrappers
+* Repairs malformed JSON
+* Enforces a strict response schema
+* Validates required fields
+* Prevents frontend parsing failures
+
+---
+
+## Quran Audio Engine
+
+The backend automatically extracts Surah and Verse identifiers from AI responses and generates valid Tanzil audio links.
+
+The engine includes custom regex processing to prevent numeric conflicts caused by file extensions and guarantees correct six-digit Quranic identifiers.
+
+---
+
+## Share Card Engine
+
+Hakim generates high-quality shareable cards optimized for:
+
+* Instagram Stories
+* Telegram
+* WhatsApp
+* RTL Languages
+* High-resolution export
+
+The rendering engine dynamically scales typography to prevent text truncation while maintaining visual consistency.
+
+---
+
+# Features
+
+## AI-powered Quran Analysis
+
+* Semantic verse interpretation
+* Context-aware explanations
+* Multi-layer reasoning
+* Practical life guidance
+* Structured AI responses
+
+## Smart Conversation System
+
+* Persistent chat sessions
+* SQLite conversation history
+* Session isolation
+* Fast API communication
+* Error recovery
+
+## Premium Sharing
+
+* Dynamic typography
+* RTL support
+* High-resolution rendering
+* Social-media optimized layouts
+
+## Voice Features
+
+* Speech-to-text support
+* Audio interaction pipeline
+
+---
+
+# Technology Stack
+
+## Mobile
+
+* Flutter
+* Dart
+* GetX
+* Screenshot
+* Share Plus
+
+## Backend
+
+* Python
+* Flask
+* SQLite
+* Flask-CORS
+* python-dotenv
+* Requests
+
+## Infrastructure
+
+* REST API
+* Linux (Ubuntu)
+* cPanel Deployment
+* Passenger WSGI
+
+---
+
+# Project Structure
+
+```
+smart_chat_bot/
+
 ├── frontend/
 │   ├── lib/
 │   │   ├── models/
@@ -147,45 +182,16 @@ hakim/
 │   ├── passenger_wsgi.py
 │   ├── requirements.txt
 │   ├── knowledge.txt
-│   └── database/
-│
-├── docs/
-│   └── screenshots/
+│   └── assistant.db
 │
 └── README.md
 ```
 
 ---
 
-## 🛠 Tech Stack
+# Installation
 
-### Frontend
-
-* Flutter
-* Dart
-* GetX
-* Screenshot
-* Share Plus
-
-### Backend
-
-* Python
-* Flask
-* SQLite
-* Flask-CORS
-* dotenv
-
-### Infrastructure
-
-* Linux (Ubuntu)
-* cPanel Deployment
-* REST API Architecture
-
----
-
-## 🚀 Installation
-
-### Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/amirkhodaei1/smart_chat_bot.git
@@ -193,78 +199,101 @@ git clone https://github.com/amirkhodaei1/smart_chat_bot.git
 cd smart_chat_bot
 ```
 
-### Flutter Setup
+---
 
-```bash
-flutter pub get
-
-flutter run
-```
-
-### Backend Setup
+## Backend
 
 ```bash
 cd backend
+
+python -m venv venv
+
+source venv/bin/activate
+# Windows:
+# venv\Scripts\activate
 
 pip install -r requirements.txt
 
 python app.py
 ```
 
----
-
-## ⚙ Environment Variables
-
-Create a `.env` file inside the backend directory:
+Create a `.env` file:
 
 ```env
-API_KEY=YOUR_API_KEY
-MODEL_NAME=YOUR_MODEL
-BASE_URL=YOUR_ENDPOINT
+GAPGPT_API_KEY=YOUR_API_KEY
 ```
 
 ---
 
-## 🎯 Design Goals
+## Flutter
 
-* Fast and responsive user experience
-* Maintainable architecture
-* AI-first workflow
-* Clean separation of frontend and backend
-* Production-ready deployment
-* Extensible codebase
+```bash
+cd frontend
 
----
+flutter pub get
 
-## 🔮 Roadmap
-
-* Advanced Quran Search
-* Verse Cross-Referencing
-* Multi-Model AI Support
-* User Accounts
-* Cloud Synchronization
-* Voice Conversations
-* Offline Mode
-* Enhanced Share Templates
+flutter run
+```
 
 ---
 
-## 🤝 Contributing
+# AI-Assisted Development
 
-Contributions, feature requests, and bug reports are welcome.
+Hakim was developed using an **AI-first software engineering workflow**.
 
-Feel free to open an issue or submit a pull request.
+Approximately **90% of the implementation** was completed through an iterative collaboration between the developer and modern AI coding tools.
+
+AI contributed to:
+
+* Flutter application development
+* Backend implementation
+* REST API integration
+* Software architecture discussions
+* State management
+* Debugging
+* Code refactoring
+* Prompt engineering
+* Technical documentation
+* Performance optimization
+
+The developer remained responsible for:
+
+* Project vision and requirements
+* Architecture decisions
+* Code review
+* Integration
+* Testing
+* Debugging
+* Deployment
+* Final engineering decisions
+
+This project demonstrates how modern AI-assisted development can significantly accelerate software engineering while maintaining full developer ownership and technical responsibility.
 
 ---
 
-## 📜 License
+# Future Improvements
 
-This project is licensed under the MIT License.
+* Advanced Quran search
+* Multi-model AI support
+* Cloud synchronization
+* User authentication
+* Offline mode
+* Voice conversations
+* Cross-device synchronization
+* Better retrieval strategies
+
+---
+
+# License
+
+This project is released under the **MIT License**.
 
 ---
 
 <p align="center">
-<b>Hakim</b><br>
-Where Artificial Intelligence Meets Quranic Wisdom.
-</p>
 
+**Hakim**
+
+*Where Artificial Intelligence Meets Quranic Understanding.*
+
+</p>
