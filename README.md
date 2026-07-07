@@ -8,12 +8,11 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart&logoColor=white"/>
   <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/Flask-3.x-000000?style=for-the-badge&logo=flask&logoColor=white"/>
   <img src="https://img.shields.io/badge/GetX-State_Management-8A2BE2?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"/>
-  <img src="https://img.shields.io/badge/REST_API-Success-2EA043?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AI_Assisted-90%25-8A2BE2?style=for-the-badge"/>
 </p>
 
 ---
@@ -23,6 +22,12 @@
 Hakim is a **full-stack AI-powered Quranic intelligence platform** designed to bridge the gap between traditional Quranic study and contemporary Artificial Intelligence technologies. 
 
 Rather than functioning as a conventional chatbot that simply generates raw text, Hakim implements a structured multi-stage processing pipeline. It retrieves contextual information, constructs optimized prompts, validates AI responses, and delivers a consistent output format specifically tailored for a premium mobile experience.
+
+## 🤖 AI-Assisted Development
+
+This project serves as a practical demonstration of modern AI-first software engineering. **Approximately 90% of the codebase and implementation was developed with the assistance of AI tools.** 
+
+Through an iterative collaboration between the developer and AI, these tools actively contributed to Flutter UI generation, backend Python logic, REST API structuring, prompt engineering, and complex JSON validation layers. The developer retained full architectural control, guiding the system's design, ensuring security, and making all final engineering decisions.
 
 ## 🚀 Key Features
 
