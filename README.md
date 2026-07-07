@@ -43,6 +43,31 @@ The application is designed with a clean mobile experience, fast API communicati
 * Fast response generation
 * Error-resilient communication layer
 
+---
+
+### 🤖 AI-Assisted Development
+
+This project was developed using an **AI-first development workflow**.
+
+Approximately **90% of the implementation** was completed with the assistance of modern AI tools through an iterative collaboration between the developer and AI. The development process relied heavily on AI for accelerating implementation, generating and refining code, debugging, architecture discussions, documentation, and UI improvements.
+
+AI contributed to areas including:
+
+* Flutter application development
+* Backend development with Python & Flask
+* REST API implementation
+* Software architecture discussions
+* State management and code organization
+* Prompt engineering
+* UI/UX improvements
+* Debugging and optimization
+* Documentation and technical writing
+
+The developer remained responsible for defining the project goals, reviewing AI-generated code, integrating components, testing functionality, fixing issues, and making all final technical decisions.
+
+This project demonstrates how modern AI-assisted software engineering can dramatically accelerate development while maintaining developer oversight and engineering responsibility.
+
+
 ### 🎨 Premium Share Card Generator
 
 Generate beautiful shareable content directly from AI responses.
@@ -241,3 +266,4 @@ This project is licensed under the MIT License.
 <b>Hakim</b><br>
 Where Artificial Intelligence Meets Quranic Wisdom.
 </p>
+
