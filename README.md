@@ -48,32 +48,28 @@ Hakim follows a layered architecture that separates presentation, application lo
 ```mermaid
 flowchart TD
 
-A[Flutter Mobile Application] --> B[Repository Layer]
-B --> C[API Service]
-C --> D[REST API]
+A[Flutter Mobile Application] -->|1. User Query + Session ID| B[API Gateway Layer]
+B --> C[Flask REST API]
 
-D --> E[Flask Backend]
+subgraph Backend_Infrastructure [Backend Infrastructure]
+    C --> D[Session Manager]
+    C --> E[TF-IDF Retrieval Engine]
+    
+    D --> F[(SQLite - WAL Mode)]
+    E --> G[(Knowledge Base)]
+    
+    F --> H[Prompt Orchestrator]
+    G --> H
+    H --> I[LLM Gateway]
+    
+    I --> J[Response Validator]
+    J --> K[JSON Sanitizer / Regex]
+    K --> L[Schema Enforcer & Char Limits]
+    L --> M[Audio Metadata Extractor]
+end
 
-E --> F[Session Manager]
-E --> G[Retrieval Engine]
-E --> H[Prompt Builder]
-E --> I[LLM Gateway]
-
-G --> J[Knowledge Base]
-F --> K[(SQLite Database)]
-
-J & K --> H
-H --> I
-
-I --> L[Response Validator]
-
-L --> M[JSON Sanitizer]
-L --> N[Schema Enforcer]
-L --> O[Audio Link Generator]
-L --> P[Share Card Formatter]
-
-P --> Q[Structured JSON Response]
-Q --> A
+M -->|2. Validated Structured JSON| A
+A -->|3. Render UI & Share Cards| N[End User]
 ```
 ---
 
